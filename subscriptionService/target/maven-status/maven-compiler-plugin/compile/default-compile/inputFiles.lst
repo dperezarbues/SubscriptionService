@@ -1,0 +1,17 @@
+C:\Users\Dabi\Documents\workspace_IntelliJ\subscriptionService\src\main\java\com\dpa\subscription\config\SwaggerConfig.java
+C:\Users\Dabi\Documents\workspace_IntelliJ\subscriptionService\src\main\java\com\dpa\subscription\domain\Subscription.java
+C:\Users\Dabi\Documents\workspace_IntelliJ\subscriptionService\src\main\java\com\dpa\subscription\client\CampaignClient.java
+C:\Users\Dabi\Documents\workspace_IntelliJ\subscriptionService\src\main\java\com\dpa\subscription\service\SubscriptionService.java
+C:\Users\Dabi\Documents\workspace_IntelliJ\subscriptionService\src\main\java\com\dpa\subscription\config\RabbitMQConfig.java
+C:\Users\Dabi\Documents\workspace_IntelliJ\subscriptionService\src\main\java\com\dpa\subscription\domain\EmailNotification.java
+C:\Users\Dabi\Documents\workspace_IntelliJ\subscriptionService\src\main\java\com\dpa\subscription\domain\Campaign.java
+C:\Users\Dabi\Documents\workspace_IntelliJ\subscriptionService\src\main\java\com\dpa\subscription\service\EmailNotificationService.java
+C:\Users\Dabi\Documents\workspace_IntelliJ\subscriptionService\src\main\java\com\dpa\subscription\service\EventNotificationService.java
+C:\Users\Dabi\Documents\workspace_IntelliJ\subscriptionService\src\main\java\com\dpa\subscription\service\EmailNotificationServiceImpl.java
+C:\Users\Dabi\Documents\workspace_IntelliJ\subscriptionService\src\main\java\com\dpa\subscription\service\EventNotificationServiceImpl.java
+C:\Users\Dabi\Documents\workspace_IntelliJ\subscriptionService\src\main\java\com\dpa\subscription\controller\SubscriptionController.java
+C:\Users\Dabi\Documents\workspace_IntelliJ\subscriptionService\src\main\java\com\dpa\subscription\service\SubscriptionServiceImpl.java
+C:\Users\Dabi\Documents\workspace_IntelliJ\subscriptionService\src\main\java\com\dpa\subscription\consumer\EmailNotificationConsumer.java
+C:\Users\Dabi\Documents\workspace_IntelliJ\subscriptionService\src\main\java\com\dpa\subscription\exception\CampaignNotFoundException.java
+C:\Users\Dabi\Documents\workspace_IntelliJ\subscriptionService\src\main\java\com\dpa\subscription\repository\SubscriptionRepository.java
+C:\Users\Dabi\Documents\workspace_IntelliJ\subscriptionService\src\main\java\com\dpa\subscription\SubscriptionServiceApplication.java

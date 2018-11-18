@@ -1,0 +1,30 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: C:\Program Files\Docker Toolbox\kompose.exe convert
+    kompose.version: 1.16.0 (0c01309)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: config-server
+  name: config-server
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: config-server
+    spec:
+      containers:
+      - env:
+        - name: SPRING_APPLICATION_JSON
+          value: '{"eureka": {"client": {"serviceUrl": {"defaultZone": "http://eureka-server:8010/eureka/"}}}}'
+        image: config-server
+        name: config-server
+        ports:
+        - containerPort: 8001
+        resources: {}
+      restartPolicy: Always
+status: {}

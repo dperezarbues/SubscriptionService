@@ -1,0 +1,27 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: C:\Program Files\Docker Toolbox\kompose.exe convert
+    kompose.version: 1.16.0 (0c01309)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: eureka-server
+  name: eureka-server
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: eureka-server
+    spec:
+      containers:
+      - image: eureka-server
+        name: eureka-server
+        ports:
+        - containerPort: 8010
+        resources: {}
+      restartPolicy: Always
+status: {}

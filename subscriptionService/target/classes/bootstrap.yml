@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: subscriptionService
+  cloud:
+    config:
+      discovery:
+        enabled: true
+      username: root
+      password: changeme
+      failFast: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8010/eureka/

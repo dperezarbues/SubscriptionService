@@ -1,0 +1,17 @@
+com\dpa\subscription\consumer\EmailNotificationConsumer.class
+com\dpa\subscription\service\EmailNotificationServiceImpl.class
+com\dpa\subscription\service\EventNotificationService.class
+com\dpa\subscription\service\SubscriptionServiceImpl.class
+com\dpa\subscription\exception\CampaignNotFoundException.class
+com\dpa\subscription\config\RabbitMQConfig.class
+com\dpa\subscription\service\EmailNotificationService.class
+com\dpa\subscription\domain\EmailNotification.class
+com\dpa\subscription\controller\SubscriptionController.class
+com\dpa\subscription\service\SubscriptionService.class
+com\dpa\subscription\client\CampaignClient.class
+com\dpa\subscription\SubscriptionServiceApplication.class
+com\dpa\subscription\config\SwaggerConfig.class
+com\dpa\subscription\domain\Campaign.class
+com\dpa\subscription\domain\Subscription.class
+com\dpa\subscription\repository\SubscriptionRepository.class
+com\dpa\subscription\service\EventNotificationServiceImpl.class

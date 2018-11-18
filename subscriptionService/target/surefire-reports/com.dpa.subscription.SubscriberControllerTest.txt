@@ -1,0 +1,23 @@
+-------------------------------------------------------------------------------
+Test set: com.dpa.subscription.SubscriberControllerTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 39.171 s <<< FAILURE! - in com.dpa.subscription.SubscriberControllerTest
+createSubscription(com.dpa.subscription.SubscriberControllerTest)  Time elapsed: 4.03 s  <<< ERROR!
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: 
+Cannot construct instance of `java.time.LocalDate` (no Creators, like default construct, exist): no String-argument constructor/factory method to deserialize from String value ('2018-01-23')
+ at [Source: (String)"{
+  "name" : "test",
+  "surname" : "surname",
+  "gender" : "gender",
+  "email" : "email@gmail.com",
+  "dateOfBirth" : "2018-01-23",
+  "consent" : true,
+  "newsLetterId" : 1,
+  "_links" : {
+    "self" : {
+      "href" : "http://localhost/v1/subscriptions/10"
+    }
+  }
+}"; line: 6, column: 19] (through reference chain: com.dpa.subscription.domain.Subscription["dateOfBirth"])
+	at com.dpa.subscription.SubscriberControllerTest.createSubscription(SubscriberControllerTest.java:67)
+

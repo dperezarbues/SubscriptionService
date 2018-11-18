@@ -1,0 +1,87 @@
+version: '2.1'
+services:
+  db:
+    image: mysql:8
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: changeme
+      MYSQL_DATABASE: subscriptions
+      MYSQL_USER: subscriptions
+      MYSQL_PASSWORD: changeme
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "--silent"]
+      interval: 1s
+      timeout: 3s
+      retries: 30
+
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  eureka-server:
+    build: ./eurekaserver
+    ports:
+      - "8010:8010"
+
+  config-server:
+    build: ./configservice
+    environment:
+      SPRING_APPLICATION_JSON:
+        '{"eureka": {"client": {"serviceUrl": {"defaultZone": "http://eureka-server:8010/eureka/"}}}}'
+    links:
+      - eureka-server:eureka-server
+    depends_on:
+      eureka-server:
+        condition: service_started
+    ports:
+      - "8001:8001"
+
+  campaigns:
+    build: ./campaignService
+    environment:
+      SPRING_APPLICATION_JSON:
+         '{"eureka": {"client": {"serviceUrl": {"defaultZone": "http://eureka-server:8010/eureka/"}}}}'
+    links:
+      - config-server:config-server
+      - eureka-server:eureka-server
+      - db:db
+    depends_on:
+      db:
+        condition: service_healthy
+      config-server:
+        condition: service_started
+      eureka-server:
+        condition: service_started
+    ports:
+      - "8442:8442"
+
+  subscription:
+    build: ./subscriptionService
+    environment:
+      SPRING_APPLICATION_JSON:
+        '{"eureka": {"client": {"serviceUrl": {"defaultZone": "http://eureka-server:8010/eureka/"}}},
+          "spring": {"rabbitmq": {"host": "rabbitmq"}}}'
+    links:
+      - config-server:config-server
+      - eureka-server:eureka-server
+      - db:db
+      - rabbitmq:rabbitmq
+    depends_on:
+      db:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_started
+      config-server:
+        condition: service_started
+      eureka-server:
+        condition: service_started
+    ports:
+      - "8443:8443"
+volumes:
+  db_data:

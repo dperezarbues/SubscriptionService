@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: campaignService
+  cloud:
+    config:
+      uri: http://localhost:8001
+      username: root
+      password: changeme
+      failFast: true

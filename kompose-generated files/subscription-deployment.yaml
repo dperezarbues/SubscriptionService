@@ -1,0 +1,31 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: C:\Program Files\Docker Toolbox\kompose.exe convert
+    kompose.version: 1.16.0 (0c01309)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: subscription
+  name: subscription
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: subscription
+    spec:
+      containers:
+      - env:
+        - name: SPRING_APPLICATION_JSON
+          value: '{"eureka": {"client": {"serviceUrl": {"defaultZone": "http://eureka-server:8010/eureka/"}}},
+            "spring": {"rabbitmq": {"host": "rabbitmq"}}}'
+        image: subscription
+        name: subscription
+        ports:
+        - containerPort: 8443
+        resources: {}
+      restartPolicy: Always
+status: {}

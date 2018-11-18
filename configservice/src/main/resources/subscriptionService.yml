@@ -1,0 +1,30 @@
+server:
+  port: 8443
+  ssl:
+    key-store-type: PKCS12
+    key-store: classpath:keystore.p12
+    key-store-password: changeme
+    key-alias: tomcatsubscription
+    enabled: true
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://192.168.99.100:3306/subscriptions?allowPublicKeyRetrieval=true&useSSL=false
+    username: subscriptions
+    password: changeme
+    tomcat:
+      max-wait: 1000000
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+dpa:
+  rabbitmq:
+    queue: subscriptions
+    exchange: subscriptions
+    routing: subscriptions
+    routingkey: subscriptions

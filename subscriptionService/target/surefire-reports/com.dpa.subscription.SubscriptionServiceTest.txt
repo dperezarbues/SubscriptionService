@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.dpa.subscription.SubscriptionServiceTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 2.453 s <<< FAILURE! - in com.dpa.subscription.SubscriptionServiceTest
+addSubscription(com.dpa.subscription.SubscriptionServiceTest)  Time elapsed: 0.875 s  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[{"newsLetterId":1,"gender":"female","surname":"subscriber2","name":"subscriber2","dateOfBirth":"2018-11-17","consent":true,"email":"test2@test.com"}]> but was:<[Optional.empty]>
+	at com.dpa.subscription.SubscriptionServiceTest.addSubscription(SubscriptionServiceTest.java:95)
+
+addMultipleSubscription(com.dpa.subscription.SubscriptionServiceTest)  Time elapsed: 0.652 s  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[{"newsLetterId":1,"gender":"female","surname":"subscriber2","name":"subscriber2","dateOfBirth":"2018-11-17","consent":true,"email":"test2@test.com"}]> but was:<[Optional.empty]>
+	at com.dpa.subscription.SubscriptionServiceTest.addMultipleSubscription(SubscriptionServiceTest.java:123)
+

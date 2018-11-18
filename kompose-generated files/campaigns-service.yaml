@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: C:\Program Files\Docker Toolbox\kompose.exe convert
+    kompose.version: 1.16.0 (0c01309)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: campaigns
+  name: campaigns
+spec:
+  ports:
+  - name: "8442"
+    port: 8442
+    targetPort: 8442
+  selector:
+    io.kompose.service: campaigns
+status:
+  loadBalancer: {}

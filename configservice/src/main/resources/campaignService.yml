@@ -1,0 +1,16 @@
+server:
+  port: 8442
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://192.168.99.100:3306/subscriptions?allowPublicKeyRetrieval=true&useSSL=false
+    username: subscriptions
+    password: changeme
+    tomcat:
+      max-wait: 10000
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8010/eureka/

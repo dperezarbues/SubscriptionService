@@ -1,0 +1,53 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: C:\Program Files\Docker Toolbox\kompose.exe convert
+    kompose.version: 1.16.0 (0c01309)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: db
+  name: db
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: db
+    spec:
+      containers:
+      - env:
+        - name: MYSQL_DATABASE
+          value: subscriptions
+        - name: MYSQL_PASSWORD
+          value: changeme
+        - name: MYSQL_ROOT_PASSWORD
+          value: changeme
+        - name: MYSQL_USER
+          value: subscriptions
+        image: mysql:8
+        livenessProbe:
+          exec:
+            command:
+            - mysqladmin
+            - ping
+            - --silent
+          failureThreshold: 30
+          periodSeconds: 1
+          timeoutSeconds: 3
+        name: db
+        ports:
+        - containerPort: 3306
+        resources: {}
+        volumeMounts:
+        - mountPath: /var/lib/mysql
+          name: db-data
+      restartPolicy: Always
+      volumes:
+      - name: db-data
+        persistentVolumeClaim:
+          claimName: db-data
+status: {}
