@@ -43,7 +43,7 @@ admin users would be offered the full CRUD experience for both the subscriptions
 restrictions this could not be accomplished
 
 
-##Building the project
+## Building the project
 
 For building and running the project you might need:
 - A suitable IDE (Intellij was used during development)
