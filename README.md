@@ -26,8 +26,7 @@ publisher has been implemented)
 In addition to the previous architecture, two more microservices are used:
 - Eureka: Used for service Discovery and
 - Cloud Config: Used as a single point of configuration for all the microservices developed. (For the sake of simplicity
-and for ease of development, cloud config is currently storing configuration files locally (native), be aware that this implementation
-is not suitable for production, where it might be advisable to have several instances running sharing configuration files)
+and for ease of development, cloud config is currently storing configuration files locally (native), be aware that this implementation is not suitable for production, where it might be advisable to have several instances running sharing configuration files)
 
 To be able to persist data and to communicate between services, a mysql database and a rabbitMQ messaging system are used.
 
@@ -119,7 +118,6 @@ Both APIs implement HATEOAS and you can find bellow a couple test Json files to 
   files, therefore there's no need for JCE Unlimited policy files.
   - All keystores have been generated with password "changeme" 
   - Tests are disabled in docker files to speed build process. Also, docker files are not meant for testing.
-
 
 License
 ----
